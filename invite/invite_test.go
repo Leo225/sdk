@@ -32,7 +32,7 @@ func TestEncode(t *testing.T) {
 	now := time.Now()
 	today := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).Unix()
 	t.Log("today: ", today)
-	uid, _ := strconv.ParseInt(userID, 10, 0)
+	uid, _ := strconv.ParseInt(userID, 10, 64)
 
 	if !test(uint64(uid + today)) {
 		return
